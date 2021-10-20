@@ -19,7 +19,7 @@ public class User {
     String   username;
     int      games_as_navigator;
     int      games_as_runner;
-    float      win_percentage;
+    float    win_percentage;
     int      wins;
 
     @DynamoDbPartitionKey

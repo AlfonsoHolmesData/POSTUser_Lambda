@@ -27,7 +27,7 @@ public class PostUserHandler implements RequestHandler<APIGatewayProxyRequestEve
         LambdaLogger logger = context.getLogger();
         APIGatewayProxyResponseEvent response = new APIGatewayProxyResponseEvent();
         try{
-            User newUser = mapper.fromJson( response.getBody(), User.class );
+            User newUser = mapper.fromJson( request.getBody(), User.class );
             logger.log("CONVERTED USER AFTER GSON MAPPER: " + newUser + " : RECORDED BY LAMBDA LOGGER \n");
             userRepo.createUser(newUser);
             response.setStatusCode(200);
