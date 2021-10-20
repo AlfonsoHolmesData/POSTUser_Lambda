@@ -37,7 +37,7 @@ public class UserRepository {
     }
 
     public void createUser(User newUser){
-        System.out.println("FROM USER REPOSITORY : " + userTable.scan().items().stream().collect(Collectors.toList()));
+        System.out.println("FROM USER REPOSITORY : " +  newUser);
         if(newUser == null) { throw new InalidRequestExectption("Somthing went wrong :("); }
         if(newUser.username == null) { throw new InalidRequestExectption("User Must Have Username!"); }
         if(newUser.username.isEmpty() || newUser.username.length() < 2 ) { throw new InalidRequestExectption("Username must be larger than  2 characters"); }
