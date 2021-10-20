@@ -1,0 +1,9 @@
+Resources:
+  Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      Timeout: 300
+      MemorySize: 256
+      Handler: com.revature.post_user.PostUserHandler
+      CodeUri: C:\Users\Alfonso Holmes\RevatureBank\POSTUser_Lambda
+      Runtime: java8.al2
