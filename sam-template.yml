@@ -1,9 +1,8 @@
-
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 Description: A simple AWS Lambda for creating users
 Resources:
-  GetSetsFx:
+  PostUserFx:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: target/POSTUser_Lambda-1.0-SNAPSHOT.jar
