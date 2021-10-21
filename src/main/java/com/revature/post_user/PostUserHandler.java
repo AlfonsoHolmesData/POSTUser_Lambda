@@ -16,15 +16,17 @@ import java.util.Map;
 
 public class PostUserHandler implements RequestHandler<APIGatewayProxyRequestEvent , APIGatewayProxyResponseEvent> {
     private final UserRepository userRepo;
-    private static final Gson mapper = new GsonBuilder().setPrettyPrinting().create();
+    private final Gson mapper ;
 
     public PostUserHandler()
     {
         userRepo = new UserRepository();
+        mapper = new GsonBuilder().setPrettyPrinting().create();
     }
-    public PostUserHandler(UserRepository userRepo)
+    public PostUserHandler(UserRepository userRepo , Gson mapper )
     {
         this.userRepo = userRepo;
+        this.mapper = mapper;
     }
 
 
