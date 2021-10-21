@@ -1,11 +1,10 @@
-package com.revature.post_user;
+package com.revature.post_user.repos;
 
+import com.revature.post_user.documents.User;
 import com.revature.post_user.exceptions.InalidRequestExectption;
-import lombok.NonNull;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbTable;
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema;
-import software.amazon.awssdk.enhanced.dynamodb.model.QueryEnhancedRequest;
 import software.amazon.awssdk.http.apache.ApacheHttpClient;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import java.util.UUID;
@@ -52,8 +51,8 @@ public class UserRepository {
 
         System.out.println("FROM USER REPOSITORY : " +  newUser + "\n");
         if(newUser == null) { throw new InalidRequestExectption("Somthing went wrong :("); }
-        if(newUser.username == null) { throw new InalidRequestExectption("User Must Have Username!"); }
-        if(newUser.username.isEmpty() || newUser.username.length() < 2 ) { throw new InalidRequestExectption("Username must be larger than  2 characters"); }
+        if(newUser.getUsername() == null) { throw new InalidRequestExectption("User Must Have Username!"); }
+        if(newUser.getUsername().isEmpty() || newUser.getUsername().length() < 2 ) { throw new InalidRequestExectption("Username must be larger than  2 characters"); }
         // check if user already exists with the included username
 
         //if(userTable.query()){ throw new RuntimeException("Null List"); }

@@ -1,4 +1,4 @@
-package com.revature.post_user;
+package com.revature.post_user.documents;
 
 
 
@@ -18,15 +18,15 @@ import javax.management.DescriptorKey;
 
 public class User {
 
-    String   id;
-    String   rank;
-    int      losses;
-    int      total_games_played;
-    String   username;
-    int      games_as_navigator;
-    int      games_as_runner;
-    float    win_percentage;
-    int      wins;
+    private String   id;
+    private String   rank;
+    private int      losses;
+    private int      total_games_played;
+    private String   username;
+    private int      games_as_navigator;
+    private int      games_as_runner;
+    private float    win_percentage;
+    private int      wins;
 
     @DynamoDbPartitionKey
     public String getId() {

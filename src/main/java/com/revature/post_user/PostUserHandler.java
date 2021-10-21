@@ -7,7 +7,9 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.revature.post_user.documents.User;
 import com.revature.post_user.exceptions.InalidRequestExectption;
+import com.revature.post_user.repos.UserRepository;
 
 
 import java.util.HashMap;
