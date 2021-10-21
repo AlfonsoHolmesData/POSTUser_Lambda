@@ -8,7 +8,8 @@ import software.amazon.awssdk.enhanced.dynamodb.TableSchema;
 import software.amazon.awssdk.enhanced.dynamodb.model.QueryEnhancedRequest;
 import software.amazon.awssdk.http.apache.ApacheHttpClient;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
-import software.amazon.awssdk.services.dynamodb.model.QueryRequest;
+import java.util.UUID;
+
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -37,14 +38,27 @@ public class UserRepository {
     }
 
     public void createUser(User newUser){
-        System.out.println("FROM USER REPOSITORY : " +  newUser);
+//        User newUserCopy = new User();
+//
+//        newUserCopy.setId("6t7i-ek04-34ij-34tr");
+//        newUserCopy.setUsername(newUser.username);
+//        newUserCopy.setRank(newUser.rank);
+//        newUserCopy.setLosses(newUser.losses);
+//        newUserCopy.setWins(newUser.wins);
+//        newUserCopy.setTotal_games_played(newUser.total_games_played);
+//        newUserCopy.setGames_as_navigator(newUser.games_as_navigator);
+//        newUserCopy.setGames_as_runner(newUser.games_as_runner);
+//        newUserCopy.setWin_percentage(newUser.win_percentage);
+
+        System.out.println("FROM USER REPOSITORY : " +  newUser + "\n");
         if(newUser == null) { throw new InalidRequestExectption("Somthing went wrong :("); }
         if(newUser.username == null) { throw new InalidRequestExectption("User Must Have Username!"); }
         if(newUser.username.isEmpty() || newUser.username.length() < 2 ) { throw new InalidRequestExectption("Username must be larger than  2 characters"); }
         // check if user already exists with the included username
 
         //if(userTable.query()){ throw new RuntimeException("Null List"); }
-
+        UUID uuid = UUID.randomUUID();
+        newUser.setId(uuid.toString());
         userTable.putItem(newUser);
     }
 }

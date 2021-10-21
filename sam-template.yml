@@ -6,7 +6,7 @@ Resources:
   GetSetsFx:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: target/original-POSTUser_Lambda-1.0-SNAPSHOT.jar
+      CodeUri: target/POSTUser_Lambda-1.0-SNAPSHOT.jar
       Handler: com.revature.post_user.PostUserHandler
       Runtime: java8.al2
       Description: Java function
@@ -14,5 +14,5 @@ Resources:
       Timeout: 30
       Tracing: Active
       Policies:
-        - arn:aws:iam::904493219403:policy/dynamodb-readonly-ama
-        - arn:aws:iam::904493219403:policy/dynamodb-write-ama
+        - arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess
+#        - arn:aws:iam::904493219403:policy/dynamodb-write-ama

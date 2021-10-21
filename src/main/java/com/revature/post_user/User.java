@@ -3,13 +3,19 @@ package com.revature.post_user;
 
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbAttribute;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbSortKey;
 
+
+import javax.management.DescriptorKey;
+
 @Data
 @DynamoDbBean
+@NoArgsConstructor
+
 public class User {
 
     String   id;
@@ -23,16 +29,13 @@ public class User {
     int      wins;
 
     @DynamoDbPartitionKey
-    @DynamoDbAttribute("id")
     public String getId() {
         return id;
     }
-
     public void setId(String id) {
         this.id = id;
     }
     @DynamoDbSortKey
-    @DynamoDbAttribute("rank")
     public String getRank() {
         return rank;
     }
@@ -85,7 +88,7 @@ public class User {
         return win_percentage;
     }
 
-    public void setWin_percentage(int win_percentage) {
+    public void setWin_percentage(float win_percentage) {
         this.win_percentage = win_percentage;
     }
     @DynamoDbAttribute("wins")
