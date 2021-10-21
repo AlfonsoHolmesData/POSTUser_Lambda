@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PostUserHandler implements RequestHandler<APIGatewayProxyRequestEvent , APIGatewayProxyResponseEvent> {
-    private static final Gson mapper = new GsonBuilder().setPrettyPrinting().create();
+    private Gson mapper = new GsonBuilder().setPrettyPrinting().create();
     private final UserRepository userRepo;
 
 
