@@ -14,4 +14,4 @@ Resources:
       Tracing: Active
       Policies:
         - arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess
-#        - arn:aws:iam::904493219403:policy/dynamodb-write-ama
+        - arn:aws:iam::904493219403:policy/dynamodb-write-ama
