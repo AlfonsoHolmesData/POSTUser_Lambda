@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="POSTUser_Lambda" />
+        <module name="POSTUser_Lambda0" />
       </profile>
     </annotationProcessing>
   </component>

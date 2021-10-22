@@ -1,4 +1,4 @@
-package com.revature.post_user.repos;
+package  com.revature.post_user.repos;
 
 import com.revature.post_user.documents.User;
 import com.revature.post_user.exceptions.InalidRequestExectption;
@@ -7,10 +7,9 @@ import software.amazon.awssdk.enhanced.dynamodb.DynamoDbTable;
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema;
 import software.amazon.awssdk.http.apache.ApacheHttpClient;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
-import java.util.UUID;
-
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class UserRepository {
