@@ -5,8 +5,8 @@ Resources:
   GetBooksFx:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: target/delete-card-1.0-SNAPSHOT.jar
-      Handler: com.revature.delete_card.DeleteCardHandler
+      CodeUri: target/PostUserLambda-1.0-SNAPSHOT.jar
+      Handler: com.revature.post_user.PostUserHandler
       Runtime: java8.al2
       Description: Java function
       MemorySize: 256
